@@ -16,3 +16,5 @@ steps:
 
 options:
   logging: NONE
+images:
+  - asia-southeast1-docker.pkg.dev/$PROJECT_ID/witwoywhy/go-gcp-cloud-run:$SHORT_SHA
