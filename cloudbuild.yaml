@@ -54,6 +54,8 @@ artifacts:
       - ${SHORT_SHA}_test_log.xml
 # [END cloudbuild_go_logs_yaml]
 # Store images in Google Artifact Registry
+options:
+  logging: CLOUD_LOGGING_ONLY 
 images:
   - us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage:$SHORT_SHA
 # [END cloudbuild_go_yaml]
