@@ -1,0 +1,7 @@
+app:
+  name: go-gcp-cloud-run
+  port: 8080
+
+log:
+  level: info
+  maskingList: accountNo|accessToken
