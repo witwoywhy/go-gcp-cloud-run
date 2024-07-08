@@ -2,20 +2,20 @@ steps:
   # Docker Build
   - id: 'build'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/go-gcp-cloud-run:$SHORT_SHA', '.']
+    args: ['build', '-t', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/witwoywhy/go-gcp-cloud-run:$SHORT_SHA', '.']
 
   # Docker push to Google Artifact Registry
   - id: 'push'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/go-gcp-cloud-run:$SHORT_SHA']
+    args: ['push', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/witwoywhy/go-gcp-cloud-run:$SHORT_SHA']
 
   # Deploy to Cloud Run
   - id: 'deploy'
     name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'go-gcp-cloud-run', '--image=asia-southeast1-docker.pkg.dev/$PROJECT_ID/go-gcp-cloud-run:$SHORT_SHA', '--region', 'asia-southeast1', '--platform', 'managed']
+    args: ['run', 'deploy', 'go-gcp-cloud-run', '--image=asia-southeast1-docker.pkg.dev/$PROJECT_ID/witwoywhy/go-gcp-cloud-run:$SHORT_SHA', '--region', 'asia-southeast1', '--platform', 'managed']
 
 options:
   logging: CLOUD_LOGGING_ONLY
-
+  
 images:
-  - asia-southeast1-docker.pkg.dev/$PROJECT_ID/go-gcp-cloud-run:$SHORT_SHA
+  - asia-southeast1-docker.pkg.dev/$PROJECT_ID/witwoywhy/go-gcp-cloud-run:$SHORT_SHA
