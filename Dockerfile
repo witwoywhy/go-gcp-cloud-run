@@ -6,12 +6,10 @@ COPY . .
 
 RUN go mod download
 
-RUN CGO_ENABLED=0 go build -mod=vendor -ldflags '-s -w -extldflags "-static"' -o goapp
+RUN CGO_ENABLED=0 go build -ldflags '-s -w -extldflags "-static"' -o goapp
 ############################################
 FROM alpine:3.19
 
-RUN apk --update add ca-certificates && \
-    rm -rf /var/cache/apk/*
 ENV TZ=Asia/Bangkok
 
 WORKDIR /app
