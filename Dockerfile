@@ -1,16 +1,18 @@
-FROM golang:1.21.6 as builder
-
-RUN apk add --no-cache tzdata
-ENV TZ=Asia/Bangkok
+FROM golang:1.21.6 AS builder
 
 WORKDIR /app
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o goapp
-    
+RUN go mod download
+
+RUN CGO_ENABLED=0 go build -mod=vendor -ldflags '-s -w -extldflags "-static"' -o goapp
 ############################################
-FROM alpine:latest as deploy
+FROM alpine:3.19
+
+RUN apk --update add ca-certificates && \
+    rm -rf /var/cache/apk/*
+ENV TZ=Asia/Bangkok
 
 WORKDIR /app
 
