@@ -20,7 +20,7 @@ steps:
         '--use-http2',
         '--port', '8080', 
         '--image=asia-southeast1-docker.pkg.dev/$PROJECT_ID/witwoywhy/go-gcp-cloud-run:$SHORT_SHA', 
-        '--region', 'asia-southeast1', 
+        '--region', '${_DEPLOY_REGION}', 
         '--platform', 'managed',
         '--allow-unauthenticated'
       ]
