@@ -15,7 +15,7 @@ func BindGreetingRoute(app gins.GinApps) {
 	hdl := handler.NewGreetingHandler(svc)
 	app.Register(
 		http.MethodGet,
-		"/greeting",
+		"greeting",
 		hdl.Handle,
 	)
 }
@@ -26,7 +26,7 @@ func BindLoginRoute(app gins.GinApps) {
 	hdl := handler.NewLoginHandler(svc)
 	app.Register(
 		http.MethodPost,
-		"/login",
+		"login",
 		hdl.Handle,
 	)
 }
