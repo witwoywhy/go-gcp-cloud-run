@@ -4,7 +4,7 @@ go 1.21.6
 
 require (
 	github.com/gin-gonic/gin v1.10.0
-	github.com/witwoywhy/go-cores v0.0.7
+	github.com/witwoywhy/go-cores v0.0.9
 )
 
 require (
