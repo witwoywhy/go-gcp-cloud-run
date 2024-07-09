@@ -17,7 +17,6 @@ steps:
         'run', 
         'deploy', 
         'go-gcp-cloud-run',
-        '--use-http2',
         '--port', '8080', 
         '--image=asia-southeast1-docker.pkg.dev/$PROJECT_ID/witwoywhy/go-gcp-cloud-run:$SHORT_SHA', 
         '--region', '${_DEPLOY_REGION}', 
