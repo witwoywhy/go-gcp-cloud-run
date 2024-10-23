@@ -1,6 +1,8 @@
 package login
 
 import (
+	"errors"
+
 	"github.com/witwoywhy/go-cores/logger"
 	"github.com/witwoywhy/go-cores/logs"
 )
@@ -19,7 +21,7 @@ func (s *service) Execute(request Request, l logger.Logger) (*Response, error) {
 	l.Debug("SOME ONE TRY LOGIN")
 	l.Info("SOME ONE TRY LOGIN")
 	l.Warn("SOME ONE TRY LOGIN")
-	l.Error("SOME ONE TRY LOGIN")
+	l.Error(errors.New("SOME ONE TRY LOGIN"))
 
 	return &Response{
 		AccountNo:   "0-0000-0000",
