@@ -13,10 +13,13 @@ func New() Service {
 }
 
 func (s *service) Execute(request Request, l logger.Logger) (*Response, error) {
-	spl, end := logs.NewSpanLogAction(l, "login")
+	l, end := logs.NewSpanLogAction(l, "login")
 	defer end()
 
-	spl.Info("SOME ONE TRY LOGIN")
+	l.Debug("SOME ONE TRY LOGIN")
+	l.Info("SOME ONE TRY LOGIN")
+	l.Warn("SOME ONE TRY LOGIN")
+	l.Error("SOME ONE TRY LOGIN")
 
 	return &Response{
 		AccountNo:   "0-0000-0000",
