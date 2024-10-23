@@ -4,7 +4,7 @@ go 1.21.6
 
 require (
 	github.com/gin-gonic/gin v1.10.0
-	github.com/witwoywhy/go-cores v0.0.9
+	github.com/witwoywhy/go-cores v0.0.14
 )
 
 require (
@@ -44,7 +44,7 @@ require (
 	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/arch v0.8.0 // indirect
 	golang.org/x/crypto v0.23.0 // indirect
-	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // indirect
+	golang.org/x/exp v0.0.0-20240222234643-814bf88cf225 // indirect
 	golang.org/x/net v0.25.0 // indirect
 	golang.org/x/sys v0.20.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
